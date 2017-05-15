@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+	</head>
+	<body >
+
+
+
+		<section ng-controller="AbcController">
+			{{x}}
+
+
+			<button ng-click="myfun()">Click</button>
+
+
+			<input ng-model="mymodel" />  <br />
+
+			{{mymodel}} <br />
+			<strong ng-bind="mymodel"></strong> <br />
+			<input ng-model="x" />
+		</section>
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+
+
+		<div >
+		{{15%10}}<br />
+		{{x+5}}<br />
+		{{y}}<br />
+		{{arr}}<br />
+		{{obj}}<br />
+		<span ng-bind="15%10"></span><br/>
+		<span ng-bind="x+5"></span><br/>
+		<span ng-bind="y"></span><br/>
+		<span ng-bind="arr"></span><br/>
+		<span ng-bind="obj"></span><br/>
+
+
+
+
+
+		</div>
+		<div>
+		{{'Hello' + 'Bye'}}
+			</div>
+		<script src="angular.min.js"></script>
+		<script>
+			//var x=document.getElementById('');
+			var app=angular.module('myapp',[]);
+
+			/*
+				run
+				--config
+				controller
+				service
+				directive
+				value
+				constant
+				factory
+			*/
+
+			app.controller('AbcController',function($scope,$rootScope){
+
+				$rootScope.y='Bye';
+				$scope.myfun=function(){
+					console.log('I Was called');
+					$scope.x=15;
+				}
+				console.log('Controller called');
+			});
+			app.run(function($rootScope){
+				$rootScope.x=10;
+				$rootScope.y='Hello'
+				$rootScope.arr=[1,5,6,'Hello'];
+				$rootScope.obj={
+					name:'Nadeem',
+					roll:2
+				}
+				console.log('App loaded');
+			});
+
+		</script>
+	</body>
+</html>

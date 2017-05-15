@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+	</head>
+	<body>
+		<section ng-controller="StartController">
+			<form ng-submit="submit()">
+				<input ng-model="text" required minlength="3" /> <br />
+				<input type="number" ng-model="number" required/> <br />
+				<input type="password" ng-model="password" required /> <br />
+				<input type="date" ng-model="date" required/> <br />
+				<button>Click</button>
+				<table>
+					<thead>
+						<tr>
+							<td>Number</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in arr">
+							<td>{{item}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div ng-repeat="(key,value) in testObj">
+				{{key=='#'?'javascript':''}}
+					{{value}}
+				</div>
+				<div ng-if="number>100">
+					This is a block with ng-if.
+				</div>
+				<div ng-show="number>100">
+					This is a block with ng-show.
+				</div>
+				<div ng-hide="number>100">
+					This is a block with ng-hide.
+				</div>
+			</form>
+		</section>
+
+
+		<script src="angular.min.js" ></script>
+		<script>
+			var app=angular.module('myapp',[]);
+
+			app.controller('StartController',function($scope){
+
+				$scope.arr=[1,2,3,4,5,6];
+				$scope.testObj={
+					a:12,
+					b:16,
+					c:'Hello',
+					d:'jsdvj',
+					e:new Date(),
+					'#':'gdshd'
+				}
+				$scope.submit=function(){
+					console.log($scope.text);
+					console.log($scope.number);
+					console.log($scope.password);
+					console.log($scope.date);
+					$scope.arr.push($scope.number);
+				}
+
+			});
+		</script>
+	</body>
+</html>
