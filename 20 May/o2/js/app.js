@@ -1,0 +1,24 @@
+var app=angular.module('app',[]);
+app.controller('myCtrl',function($scope){
+	$scope.state=1;
+	$scope.student={
+		name:'',
+		phno:'',
+		address:''
+	}
+	$scope.submitForm=function(){
+		console.log($scope.student);
+		if($scope.state==1)
+			$scope.students.push($scope.student);
+		$scope.student={};
+		$scope.state=1;
+	}
+	$scope.deleteStudent=function(index){
+		$scope.students.splice(index,1);
+	}
+	$scope.editStudent=function(index){
+		$scope.student=$scope.students[index];
+		$scope.state=2;
+	}
+	$scope.students=[];
+});
