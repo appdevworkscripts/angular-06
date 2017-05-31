@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+	</head>
+	<body>
+		<section ng-controller="myctrl">
+			<form name="myForm" ng-submit="myFrom.$valid && submitForm()" novalidate>
+				
+				<input name="myText" ng-model="myText" required minlength="10" pattern="^[ABCD]*$" />
+				<span ng-show="(myForm.$submitted || myForm.myText.$touched)" ng-messages="myForm.myText.$error">
+					<span ng-message="required">Text should not be empty.</span>
+					<span ng-message="pattern">Text should contain only ABCD.</span>
+					<span ng-message="minlength">Text should contain atleast 10 characters.</span>
+					
+				</span>
+				
+				<button>Submit</button>
+			</form>
+			
+			
+			
+			
+			<!---
+			<pre>
+				{{myForm | json}}
+			</pre>
+			<span ng-show="(myForm.$submitted || myForm.myText.$touched) && myForm.myText.$error.minlength">
+					Text should contain atleast 10 characters.
+				</span>
+				<span ng-show="(myForm.$submitted || myForm.myText.$touched) && myForm.myText.$error.pattern">
+					Text should contain only ABCD.
+				</span>
+				<span ng-show="(myForm.$submitted || myForm.myText.$touched) && myForm.myText.$error.required">
+					Text should not be empty.
+				</span>
+				
+				
+				
+				<div ng-messages="obj">
+				<span ng-message="b">Message 2</span>
+					<span ng-message="a">Message 1</span>
+					
+					<span  ng-message="c">Message 3</span>
+					<span  ng-message="d">Message 4</span>
+				</div>
+				-->
+		</section>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-messages.min.js"></script>
+		<script src="js/app.js"></script> 
+	</body>
+</html>

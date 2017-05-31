@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body>
+		<section ng-controller="myctrl" class="container">
+			<form name="myForm" ng-submit="myFrom.$valid && submitForm()" novalidate role="form" class="col-md-6 col-md-offset-3">
+					
+					
+					<div class="form-group" ng-class="myForm.myText.$invalid?'has-error':'has-success'">
+					  <label class="control-label" for="nameText">Name</label>
+					  <input type="text" name="myText" ng-model="myText" class="form-control" id="nameText"  required minlength="10" pattern="^[ABCD]*$" />
+					  
+					  <span class="help-block" ng-show="(myForm.$submitted || myForm.myText.$touched)" ng-messages="myForm.myText.$error">
+					<span ng-message="required">Text should not be empty.</span>
+					<span ng-message="pattern">Text should contain only ABCD.</span>
+					<span ng-message="minlength">Text should contain atleast 10 characters.</span>
+					
+				</span>
+					</div>
+				<!--
+		
+				<input name="myText" ng-model="myText" required minlength="10" pattern="^[ABCD]*$" />
+				
+				-->
+				<button class="btn btn-primary">Submit</button>
+			</form>
+		</section>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-messages.min.js"></script>
+		<script src="js/app.js"></script> 
+	</body>
+</html>
