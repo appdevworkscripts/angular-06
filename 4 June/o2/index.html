@@ -1,0 +1,23 @@
+<script>
+var sum3=function(){
+	console.log('Sum3 called');
+}
+var sum2=function(){
+	console.log('Sum2 called');
+	sum3();
+}
+
+var sum1=function(){
+	console.log('Sum1 called');
+	sum2();
+}
+
+
+
+var test=function(){
+	console.log('Test Function');
+}
+sum1();
+test();
+setTimeout(test,1000);
+</script>
