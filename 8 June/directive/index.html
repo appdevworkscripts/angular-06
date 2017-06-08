@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+	</head>
+	<body>
+	
+		<section ng-controller="AController">
+			<my-first-directive msg="{{m}}" ng-repeat="m in arr"></my-first-directive>
+			
+			<v-card cnt="{name:str,phone:'7827238067'}"></v-card>
+			<v-card cnt="{name:'Nadeem',phone:'7827238068'}"></v-card>
+			<v-card cnt="{name:'Pqr',phone:'7827238069'}"></v-card>
+			
+		</section>
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
