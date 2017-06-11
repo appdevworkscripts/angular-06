@@ -1,0 +1,19 @@
+Till
+ 
+The project contains the following states
+ 
+1. Initial Setup
+2. Till mode
+3. Exit
+ 
+ 
+1. Initial setup. In this user must be allowed to add the values for curriencies which were available at the time of opening the till. Make sure all the currency denominations are available (1,2,5,10,20,50,100,500,2000). There should be a clean layout so that user can enter all values. All text boxes must only except numbers. Validations must be performed alongside.
+ 
+2. Till Mode. In this mode the user must be able to see exact value of coins/notes and value of all currency denominations. There should be two textboxes present, which will except only numbers. One for the amount that has to be taken from customer and another for the currency denominations that customer has provided. There should be a button "Process" which will process the transaction. Once the trasaction is proccessd, the till must be updated with all the currency coins/notes and thier exact values. There must be a column at left so that a user can edit any previous transaction.
+ 
+3. Exit. At the time of exit all the records must be shown as Html report with a print button. And final currency denominations left.
+ 
+
+Non-functional requirements.
+* Use Angular-route for changing states.
+* There should be different progress bars for all rupee notes and change color from green to red on thier note/coin count.
