@@ -62,8 +62,10 @@ app.controller('myctrl',function($scope,$q,$http){
 			}
 		}).then(function(response){
 			console.log(response);
+			
 		},function(response){
 			console.log(response);
+			
 		});
 	}
 })

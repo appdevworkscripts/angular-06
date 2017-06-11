@@ -1,0 +1,19 @@
+header{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	background:white;
+	text-align:center;
+}
+section{
+	font-size:16px;
+	margin-top:100px;
+	min-height:500px;
+}
+footer{
+	width:100%;
+	text-align:center;
+	background:black;
+	color:white;
+}

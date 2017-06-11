@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myapp">
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<base href="/">
+	</head>
+	<body>
+	
+		<header>
+			<h1>This is my heading</h1>
+			<div style="text-align:right">
+				<a href="/">Home</a> | <a href="/a">Second</a>
+			</div>
+		</header>
+		<section ng-view>
+		</section>
+		<footer>
+			Copyright 2017 &copy;
+		</footer>
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		
+		<script src="js/angular-route.min.js"></script>
+	</body>
+</html>
